@@ -28,68 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Loginlbl = new Label();
-            IDtbox = new TextBox();
-            PWxtbox = new TextBox();
-            logInbtn = new Button();
+            lblAppName = new Label();
+            txtID = new TextBox();
+            txtPW = new TextBox();
+            btnLogin = new Button();
             SuspendLayout();
             // 
-            // Loginlbl
+            // lblAppName
             // 
-            Loginlbl.AutoSize = true;
-            Loginlbl.Font = new Font("맑은 고딕", 32F);
-            Loginlbl.Location = new Point(120, 61);
-            Loginlbl.Name = "Loginlbl";
-            Loginlbl.Size = new Size(134, 59);
-            Loginlbl.TabIndex = 0;
-            Loginlbl.Text = "Login";
+            lblAppName.AutoSize = true;
+            lblAppName.Font = new Font("맑은 고딕", 40F);
+            lblAppName.ForeColor = SystemColors.AppWorkspace;
+            lblAppName.Location = new Point(110, 81);
+            lblAppName.Name = "lblAppName";
+            lblAppName.Padding = new Padding(0, 0, 0, 5);
+            lblAppName.Size = new Size(165, 77);
+            lblAppName.TabIndex = 0;
+            lblAppName.Text = "Login";
             // 
-            // IDtbox
+            // txtID
             // 
-            IDtbox.Location = new Point(95, 180);
-            IDtbox.Multiline = true;
-            IDtbox.Name = "IDtbox";
-            IDtbox.Size = new Size(200, 50);
-            IDtbox.TabIndex = 1;
+            txtID.BackColor = Color.FromArgb(237, 240, 234);
+            txtID.Font = new Font("맑은 고딕", 20F);
+            txtID.Location = new Point(61, 213);
+            txtID.Multiline = true;
+            txtID.Name = "txtID";
+            txtID.Size = new Size(271, 50);
+            txtID.TabIndex = 1;
             // 
-            // PWxtbox
+            // txtPW
             // 
-            PWxtbox.Location = new Point(95, 236);
-            PWxtbox.Multiline = true;
-            PWxtbox.Name = "PWxtbox";
-            PWxtbox.Size = new Size(200, 50);
-            PWxtbox.TabIndex = 2;
+            txtPW.BackColor = Color.FromArgb(237, 240, 234);
+            txtPW.Font = new Font("맑은 고딕", 20F);
+            txtPW.Location = new Point(61, 270);
+            txtPW.Multiline = true;
+            txtPW.Name = "txtPW";
+            txtPW.Size = new Size(271, 50);
+            txtPW.TabIndex = 2;
             // 
-            // logInbtn
+            // btnLogin
             // 
-            logInbtn.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            logInbtn.Location = new Point(120, 319);
-            logInbtn.Name = "logInbtn";
-            logInbtn.Size = new Size(150, 50);
-            logInbtn.TabIndex = 3;
-            logInbtn.Text = "로그인";
-            logInbtn.UseVisualStyleBackColor = true;
+            btnLogin.Font = new Font("맑은 고딕", 18F, FontStyle.Bold);
+            btnLogin.Location = new Point(120, 400);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(150, 50);
+            btnLogin.TabIndex = 3;
+            btnLogin.Text = "로그인";
+            btnLogin.UseVisualStyleBackColor = true;
             // 
             // LoginScreen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(15, 82, 168);
             ClientSize = new Size(384, 561);
-            Controls.Add(logInbtn);
-            Controls.Add(PWxtbox);
-            Controls.Add(IDtbox);
-            Controls.Add(Loginlbl);
+            Controls.Add(btnLogin);
+            Controls.Add(txtPW);
+            Controls.Add(txtID);
+            Controls.Add(lblAppName);
             Name = "LoginScreen";
-            Text = "LoginScreen";
+            Text = "Login Screen";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label Loginlbl;
-        private TextBox IDtbox;
-        private TextBox PWxtbox;
-        private Button logInbtn;
+        private Label lblAppName;
+        private TextBox txtID;
+        private TextBox txtPW;
+        private Button btnLogin;
     }
 }
