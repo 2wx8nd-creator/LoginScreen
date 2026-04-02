@@ -37,7 +37,7 @@ namespace LoginScreen
             {
                 txtPW.Text = "";
                 txtPW.ForeColor = Color.Black;
-                txtPW.UseSystemPasswordChar = false;
+                txtPW.UseSystemPasswordChar = true;
             }
         }
 
