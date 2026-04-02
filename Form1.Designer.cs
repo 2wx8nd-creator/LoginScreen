@@ -50,21 +50,29 @@
             // 
             txtID.BackColor = Color.FromArgb(237, 240, 234);
             txtID.Font = new Font("맑은 고딕", 20F);
+            txtID.ForeColor = SystemColors.ButtonShadow;
             txtID.Location = new Point(61, 213);
             txtID.Multiline = true;
             txtID.Name = "txtID";
             txtID.Size = new Size(271, 50);
-            txtID.TabIndex = 1;
+            txtID.TabIndex = 2;
+            txtID.Text = "아이디";
+            txtID.Enter += txtID_Enter;
+            txtID.Leave += txtID_Leave;
             // 
             // txtPW
             // 
             txtPW.BackColor = Color.FromArgb(237, 240, 234);
             txtPW.Font = new Font("맑은 고딕", 20F);
+            txtPW.ForeColor = SystemColors.AppWorkspace;
             txtPW.Location = new Point(61, 270);
             txtPW.Multiline = true;
             txtPW.Name = "txtPW";
             txtPW.Size = new Size(271, 50);
-            txtPW.TabIndex = 2;
+            txtPW.TabIndex = 3;
+            txtPW.Text = "비밀번호";
+            txtPW.Enter += txtPW_Enter;
+            txtPW.Leave += txtPW_Leave;
             // 
             // btnLogin
             // 
@@ -72,9 +80,10 @@
             btnLogin.Location = new Point(120, 400);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(150, 50);
-            btnLogin.TabIndex = 3;
+            btnLogin.TabIndex = 0;
             btnLogin.Text = "로그인";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // LoginScreen
             // 
