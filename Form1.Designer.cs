@@ -32,17 +32,18 @@
             txtID = new TextBox();
             txtPW = new TextBox();
             btnLogin = new Button();
+            lblErrorMsg = new Label();
             SuspendLayout();
             // 
             // lblAppName
             // 
             lblAppName.AutoSize = true;
-            lblAppName.Font = new Font("맑은 고딕", 40F);
+            lblAppName.Font = new Font("Georgia", 39.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAppName.ForeColor = SystemColors.AppWorkspace;
             lblAppName.Location = new Point(110, 81);
             lblAppName.Name = "lblAppName";
             lblAppName.Padding = new Padding(0, 0, 0, 5);
-            lblAppName.Size = new Size(165, 77);
+            lblAppName.Size = new Size(162, 66);
             lblAppName.TabIndex = 0;
             lblAppName.Text = "Login";
             // 
@@ -58,6 +59,7 @@
             txtID.TabIndex = 2;
             txtID.Text = "아이디";
             txtID.Enter += txtID_Enter;
+            txtID.KeyDown += txtID_KeyDown;
             txtID.Leave += txtID_Leave;
             // 
             // txtPW
@@ -71,7 +73,9 @@
             txtPW.Size = new Size(271, 50);
             txtPW.TabIndex = 3;
             txtPW.Text = "비밀번호";
+            txtPW.TextChanged += txtPW_TextChanged;
             txtPW.Enter += txtPW_Enter;
+            txtPW.KeyDown += txtPW_KeyDown;
             txtPW.Leave += txtPW_Leave;
             // 
             // btnLogin
@@ -85,12 +89,25 @@
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
             // 
+            // lblErrorMsg
+            // 
+            lblErrorMsg.AutoSize = true;
+            lblErrorMsg.ForeColor = Color.FromArgb(240, 0, 0);
+            lblErrorMsg.Location = new Point(61, 323);
+            lblErrorMsg.Name = "lblErrorMsg";
+            lblErrorMsg.Size = new Size(235, 15);
+            lblErrorMsg.TabIndex = 4;
+            lblErrorMsg.Text = "*아이디 또는 비밀번호가 잘못 되었습니다.";
+            lblErrorMsg.Visible = false;
+            lblErrorMsg.Click += label1_Click;
+            // 
             // LoginScreen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 82, 168);
             ClientSize = new Size(384, 561);
+            Controls.Add(lblErrorMsg);
             Controls.Add(btnLogin);
             Controls.Add(txtPW);
             Controls.Add(txtID);
@@ -107,5 +124,6 @@
         private TextBox txtID;
         private TextBox txtPW;
         private Button btnLogin;
+        private Label lblErrorMsg;
     }
 }

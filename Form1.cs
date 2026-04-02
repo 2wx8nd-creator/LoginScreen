@@ -35,17 +35,17 @@ namespace LoginScreen
         {
             if (txtPW.Text == "비밀번호")
             {
-
-                txtPW.UseSystemPasswordChar = true;
                 txtPW.Text = "";
                 txtPW.ForeColor = Color.Black;
+                txtPW.UseSystemPasswordChar = false;
             }
         }
 
         private void txtPW_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtPW.Text)) 
-            { txtPW.UseSystemPasswordChar = false;
+            if (string.IsNullOrWhiteSpace(txtPW.Text))
+            {
+                txtPW.UseSystemPasswordChar = false;
                 txtPW.Text = "비밀번호";
                 txtPW.ForeColor = Color.Silver;
             }
@@ -74,11 +74,40 @@ namespace LoginScreen
             if (inputID == myID && inputPW == myPW)
             {
                 MessageBox.Show("로그인성공!");
+                lblErrorMsg.Visible = false;
             }
             else
             {
-                MessageBox.Show("로그인실패~");
+                lblErrorMsg.Visible = true;
             }
+        }
+
+        private void txtID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                txtPW.Focus();
+            }
+        }
+
+        private void txtPW_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                btnLogin.PerformClick();
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPW_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
